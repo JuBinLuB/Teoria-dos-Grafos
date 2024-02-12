@@ -12,7 +12,6 @@ class ImageViewer(tk.Frame):
         self.graph = Graph()
         self.master = master
         self.output_directory = r"E:\Pandora's Box\Documents\Faculdade\Teoria dos Grafos\Trabalho Prático 02\images/"
-        self.output_paths = []
         self.max_floors = 0
         self.pack()
         self.create_widgets()
@@ -97,7 +96,7 @@ class ImageViewer(tk.Frame):
         source_pixel, destination_pixels = self.graph.build_graph(self.image_paths, self.max_floors)
 
         if not source_pixel or not destination_pixels:
-            messagebox.showerror("Erro", f"Pixel de origem {source_pixel} ou destino {destination_pixels} não foi encontrado.")
+            messagebox.showerror("Erro", f"Pixel de origem ou destino não foi encontrado.")
             return
 
         # Calculate the shortest path using the Dijkstra algorithm.
@@ -107,18 +106,16 @@ class ImageViewer(tk.Frame):
             messagebox.showerror("Erro", "Não há caminho possível.")
             return
         
-        for image_path in self.image_paths:
-            # Construct the output path for the drawn image.
-            output_path = os.path.join(self.output_directory, f"possible_path_{os.path.basename(image_path)}")
-            self.output_paths.append(output_path)
-
-        # Draw the path on a new image.
-        draw_path(path, self.image_paths, self.output_paths, self.max_floors)
-
-        # Display the composite image with drawn paths
-        self.original_images = [Image.open(os.path.join(self.output_directory, f"possible_path_{os.path.basename(path)}"))
+        # Construct the output path for the drawn image.
+        self.output_paths = [os.path.join(self.output_directory, f"possible_path_{os.path.basename(path)}")
             for path in self.image_paths
         ]
+        
+        # Draw the path on a new image.
+        draw_path(path, self.image_paths, self.output_paths)
+
+        # Display the composite image with drawn paths
+        self.original_images = [Image.open(output_path) for output_path in self.output_paths]
         self.display_images()
 
     def on_key_press(self, event):

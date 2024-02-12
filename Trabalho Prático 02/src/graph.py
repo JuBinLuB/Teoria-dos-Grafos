@@ -82,17 +82,11 @@ class Graph:
     Returns:
     - A tuple containing the source pixel and destination pixels representing the edges of the graph.
     """
-    images = []
-
     # Load the images using the load_image function.
-    for i in range(max_floors):
-      image = load_image(image_paths[i])
-      images.append(image)
+    images = [load_image(image_path) for image_path in image_paths]
 
     source_pixel = None
     destination_pixels = []
-    
-    valid_colors = [Color.WHITE, Color.RED, Color.GREEN, Color.GRAY_DARK, Color.GRAY_LIGHT]
     
     for z in range(max_floors):
       width, height = images[z].size
@@ -104,7 +98,7 @@ class Graph:
           pixel_color = images[z].getpixel((x, y))
 
           # Check if the pixel is not black.
-          if pixel_color in valid_colors:
+          if pixel_color != Color.BLACK:
             if pixel_color == Color.RED:
               source_pixel = current_pixel
       
@@ -143,17 +137,20 @@ class Graph:
 
     # Add edges between the current pixel and its neighbors.
     for coordinate_x, coordinate_y, coordinate_z in neighbor_coordinates_list:
+        # Get the pixel color of the neighbor.
         pixel_color = images[coordinate_z].getpixel((coordinate_x, coordinate_y))
         weight = color_weights.get(pixel_color, None)
 
         if weight is None:
           raise ValueError(f"Unknown color found: {pixel_color}")
         
+        # Check if the neighbor is on the same floor.
         same_floor = coordinate_z == coordinates[2]
 
-        # Transition between floors has a higher cost.
         if not same_floor:
           weight = 5  # Higher cost for transitioning between floors.
+        
+        # Add an undirected edge between the current pixel and its neighbor with the calculated weight.
         self.add_undirected_edge(coordinates, (coordinate_x, coordinate_y, coordinate_z), weight)
 
   def get_neighbors(self, coordinates: Tuple[int, int, int], width: int, height: int, max_floors: int, images: List[Image.Image]) -> List[Tuple[int, int, int]]:
@@ -178,13 +175,16 @@ class Graph:
 
     # Iterate over each direction.
     for coordinate_x, coordinate_y, coordinate_z in directions:
-        if 0 <= coordinate_x < width and 0 <= coordinate_y < height and 0 <= coordinate_z < max_floors:
-          # Get the pixel color of the corresponding floor.
-          pixel_color = images[coordinate_z].getpixel((coordinate_x, coordinate_y))
+       # Check if the neighbor is within the image boundaries.
+      is_within_the_limits = 0 <= coordinate_x < width and 0 <= coordinate_y < height and 0 <= coordinate_z < max_floors
+      
+      if is_within_the_limits:
+        # Get the pixel color of the corresponding floor.
+        pixel_color = images[coordinate_z].getpixel((coordinate_x, coordinate_y))
 
-          # Check if the pixel is not black.
-          if pixel_color != Color.BLACK:
-            neighbors.append((coordinate_x, coordinate_y, coordinate_z))
+        # Check if the pixel is not black.
+        if pixel_color != Color.BLACK:
+          neighbors.append((coordinate_x, coordinate_y, coordinate_z))
     return neighbors
   
   def path_bfs(self, source_pixel: any, destination_pixels: List[Any]) -> List[Any]:

@@ -2,7 +2,7 @@ from typing import Any, List, Tuple
 from PIL import Image, ImageDraw
 from colors import Color
 
-def draw_path(path: List, image_paths: List[str], output_paths: List[str], max_floors: int) -> None:
+def draw_path(path: List, image_paths: List[str], output_paths: List[str]) -> None:
     """
     Draw the specified path on the image and save the resulting image for each floor.
 
@@ -15,22 +15,17 @@ def draw_path(path: List, image_paths: List[str], output_paths: List[str], max_f
     Returns:
     - None
     """
-    original_images = []
-    draws = []
+    # Load the images and create drawing objects for each floor.
+    original_images = [Image.open(image_path).convert("RGB") for image_path in image_paths]
+    draws = [ImageDraw.Draw(image) for image in original_images]
 
     path_color = Color.BLUE
-
-    # Load the images and create drawing objects for each floor.
-    for i in range(max_floors):
-      original_image = Image.open(image_paths[i]).convert("RGB")
-      draw = ImageDraw.Draw(original_image)
-      
-      original_images.append(original_image)
-      draws.append(draw)
 
     # Draw the specified path on each floor's image.
     for x, y, z in path:
       pixel_color = original_images[z].getpixel((x, y))
+
+      # Check if the pixel color is not a start or end color.
       if pixel_color not in [Color.RED, Color.GREEN]:
         draws[z].point((x, y), fill=path_color)
 
