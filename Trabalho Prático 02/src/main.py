@@ -8,7 +8,7 @@ def main():
     window.title("Image Viewer App")
     app = ImageViewer(master=window)
 
-    # Run the Tkinter event loop
+    # Run the Tkinter event loop.
     app.mainloop()
 
 if __name__ == "__main__":
