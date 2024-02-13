@@ -11,7 +11,7 @@ class ImageViewer(tk.Frame):
         super().__init__(master)
         self.graph = Graph()
         self.master = master
-        self.output_directory = r"E:\Pandora's Box\Documents\Faculdade\Teoria dos Grafos\Trabalho Prático 02\images/"
+        self.output_directory_path = r"E:\Pandora's Box\Documents\Faculdade\Teoria dos Grafos\Trabalho Prático 02\images/"
         self.max_floors = 0
         self.pack()
         self.create_widgets()
@@ -107,15 +107,15 @@ class ImageViewer(tk.Frame):
             return
         
         # Construct the output path for the drawn image.
-        self.output_paths = [os.path.join(self.output_directory, f"possible_path_{os.path.basename(path)}")
+        self.output_image_paths = [os.path.join(self.output_directory_path, f"possible_path_{os.path.basename(path)}")
             for path in self.image_paths
         ]
         
         # Draw the path on a new image.
-        draw_path(path, self.image_paths, self.output_paths)
+        draw_path(path, self.image_paths, self.output_image_paths)
 
-        # Display the composite image with drawn paths
-        self.original_images = [Image.open(output_path) for output_path in self.output_paths]
+        # Display the composite image with drawn paths.
+        self.original_images = [Image.open(image) for image in self.output_image_paths]
         self.display_images()
 
     def on_key_press(self, event):
