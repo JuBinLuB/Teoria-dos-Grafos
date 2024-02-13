@@ -176,9 +176,7 @@ class Graph:
     # Iterate over each direction.
     for coordinate_x, coordinate_y, coordinate_z in directions:
        # Check if the neighbor is within the image boundaries.
-      is_within_the_limits = 0 <= coordinate_x < width and 0 <= coordinate_y < height and 0 <= coordinate_z < max_floors
-      
-      if is_within_the_limits:
+      if 0 <= coordinate_x < width and 0 <= coordinate_y < height and 0 <= coordinate_z < max_floors:
         # Get the pixel color of the corresponding floor.
         pixel_color = images[coordinate_z].getpixel((coordinate_x, coordinate_y))
 
