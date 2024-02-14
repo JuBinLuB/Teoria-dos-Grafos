@@ -72,7 +72,7 @@ class ImageViewer(tk.Frame):
             path = self.graph.path_bfs(source_pixel, destination_pixel)
             if path:
                 draw_path(path, self.image_path)
-                self.original_image = Image.open("E:\Pandora's Box\Documents\Faculdade\Teoria dos Grafos\Trabalho Prático 01\Datasets\possible_path.bmp")
+                self.original_image = Image.open("E:\Pandora's Box\Documents\Faculdade\Teoria dos Grafos\Trabalho Prático 01\images\possible_path.bmp")
                 self.display_image()
             else:
                 messagebox.showerror("Nao ha caminho possivel.")

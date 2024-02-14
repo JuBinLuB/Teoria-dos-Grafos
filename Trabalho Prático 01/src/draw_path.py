@@ -17,5 +17,5 @@ def draw_path(path: list, image_name: str) -> None:
       x, y = v
       pixels[x, y] = (0, 0, 255)
     # Save the resulting image with the drawn path.
-    image.save("E:\Pandora's Box\Documents\Faculdade\Teoria dos Grafos\Trabalho Prático 01\Datasets\possible_path.bmp")
+    image.save("E:\Pandora's Box\Documents\Faculdade\Teoria dos Grafos\Trabalho Prático 01\images\possible_path.bmp")
     

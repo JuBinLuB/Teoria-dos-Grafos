@@ -11,7 +11,8 @@ class ImageViewer(tk.Frame):
         super().__init__(master)
         self.graph = Graph()
         self.master = master
-        self.output_directory_path = "./images"
+        self.output_directory_path = r"E:\Pandora's Box\Documents\Faculdade\Teoria dos Grafos\Trabalho Prático 02\images"
+        self.image_paths = []
         self.max_floors = 0
         self.pack()
         self.create_widgets()
@@ -46,10 +47,14 @@ class ImageViewer(tk.Frame):
         self.start_y = 0
 
     def upload_images(self):
+        # Reset the graph before loading new images.
+        self.reset_graph()
+
+        # Prompt user to select image files.
         file_paths = filedialog.askopenfilenames(filetypes=[("Bitmap files", "*.bmp")])
         if file_paths:
-            self.image_paths = file_paths
-            self.max_floors += len(file_paths)
+            self.image_paths = list(file_paths)
+            self.max_floors = len(self.image_paths)
             try:
                 self.original_images = [Image.open(path) for path in self.image_paths]
                 self.display_images()
@@ -139,3 +144,8 @@ class ImageViewer(tk.Frame):
 
     def on_drag_stop(self, event):
         pass
+
+    def reset_graph(self):
+        self.graph = Graph()
+        self.max_floors = 0
+        self.image_paths = []
