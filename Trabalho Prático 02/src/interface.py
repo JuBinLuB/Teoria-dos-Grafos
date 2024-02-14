@@ -11,7 +11,7 @@ class ImageViewer(tk.Frame):
         super().__init__(master)
         self.graph = Graph()
         self.master = master
-        self.output_directory_path = r"E:\Pandora's Box\Documents\Faculdade\Teoria dos Grafos\Trabalho Prático 02\images/"
+        self.output_directory_path = "./images"
         self.max_floors = 0
         self.pack()
         self.create_widgets()
