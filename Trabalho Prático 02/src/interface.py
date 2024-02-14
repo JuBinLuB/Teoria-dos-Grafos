@@ -51,7 +51,6 @@ class ImageViewer(tk.Frame):
             self.image_paths = file_paths
             self.max_floors += len(file_paths)
             try:
-                # Assuming you want to display the first image initially
                 self.original_images = [Image.open(path) for path in self.image_paths]
                 self.display_images()
             except Exception as e:
