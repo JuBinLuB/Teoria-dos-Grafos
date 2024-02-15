@@ -136,22 +136,22 @@ class Graph:
     }
 
     # Add edges between the current pixel and its neighbors.
-    for coordinate_x, coordinate_y, coordinate_z in neighbor_coordinates_list:
+    for neighbor_x, neighbor_y, neighbor_z in neighbor_coordinates_list:
         # Get the pixel color of the neighbor.
-        pixel_color = images[coordinate_z].getpixel((coordinate_x, coordinate_y))
+        pixel_color = images[neighbor_z].getpixel((neighbor_x, neighbor_y))
         weight = color_weights.get(pixel_color, None)
 
         if weight is None:
           raise ValueError(f"Unknown color found: {pixel_color}")
         
         # Check if the neighbor is on the same floor.
-        same_floor = coordinate_z == coordinates[2]
+        same_floor = (neighbor_z == coordinates[2])
 
         if not same_floor:
           weight = 5  # Higher cost for transitioning between floors.
         
         # Add an undirected edge between the current pixel and its neighbor with the calculated weight.
-        self.add_undirected_edge(coordinates, (coordinate_x, coordinate_y, coordinate_z), weight)
+        self.add_undirected_edge(coordinates, (neighbor_x, neighbor_y, neighbor_z), weight)
 
   def get_neighbors(self, coordinates: Tuple[int, int, int], width: int, height: int, max_floors: int, images: List[Image.Image]) -> List[Tuple[int, int, int]]:
     """
@@ -174,18 +174,18 @@ class Graph:
     directions = [(x - 1, y, z), (x + 1, y, z), (x, y - 1, z), (x, y + 1, z), (x, y, z + 1), (x, y, z - 1)]
 
     # Iterate over each direction.
-    for coordinate_x, coordinate_y, coordinate_z in directions:
+    for neighbor_x, neighbor_y, neighbor_z in directions:
        # Check if the neighbor is within the image boundaries.
-      if 0 <= coordinate_x < width and 0 <= coordinate_y < height and 0 <= coordinate_z < max_floors:
+      if 0 <= neighbor_x < width and 0 <= neighbor_y < height and 0 <= neighbor_z < max_floors:
         # Get the pixel color of the corresponding floor.
-        pixel_color = images[coordinate_z].getpixel((coordinate_x, coordinate_y))
+        pixel_color = images[neighbor_z].getpixel((neighbor_x, neighbor_y))
 
         # Check if the pixel is not black.
         if pixel_color != Color.BLACK:
-          neighbors.append((coordinate_x, coordinate_y, coordinate_z))
+          neighbors.append((neighbor_x, neighbor_y, neighbor_z))
     return neighbors
   
-  def path_bfs(self, source_pixel: any, destination_pixels: List[Any]) -> List[Any]:
+  def path_bfs(self, source_pixel: Tuple[int, int, int], destination_pixels: List[Tuple[int, int, int]]) -> List[Tuple[int, int, int]]:
     """
     Perform Breadth-First Search (BFS) starting from the specified source node.
 
