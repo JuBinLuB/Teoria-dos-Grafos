@@ -32,7 +32,7 @@ O projeto está organizado em diversos módulos para facilitar a manutenção e 
 - `graph.py`: Implementação da estrutura de grafo e algoritmos relacionados.
 - `draw_path.py`: Função para desenhar o caminho na imagem.
 - `load_image.py`: Função para carregar imagens utilizando a biblioteca Pillow.
-- `draw_path.py`: Módulo contendo uma classe simples para representar cores.
+- `colors.py`: Módulo contendo uma classe simples para representar cores.
 
 ## Tecnologias Utilizadas
 - Linguagem: Python
