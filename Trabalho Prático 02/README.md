@@ -54,5 +54,20 @@ O projeto está organizado em diversos módulos para facilitar a manutenção e 
 3. **Carregar Imagens**:  
    No programa aberto, clique no botão "Carregar Imagens" para selecionar os arquivos bitmap (.bmp) que representam os diferentes andares do projeto. Os arquivos bitmap estão localizados na pasta `Datasets`.
 
-4. **Exibir Caminho Otimizado**:  
+   <div align="center">
+     <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/6dc71e20-c90c-4d09-ae17-8bfa862f4ff9" alt="Imagem1" width="400">
+   </div>
+   
+   <br> <!-- Adiciona uma quebra de linha para espaçamento -->
+   
+   <div align="center">
+      <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/681244c3-280a-44a5-9f6e-28d37a52c294" alt="Imagem1" width="400">
+   </div>
+
+5. **Exibir Caminho Otimizado**:  
    Após o carregamento das imagens, clique no botão "Exibir Caminho" para calcular e apresentar o caminho otimizado para o deslocamento de equipamentos em ambientes 3D.
+
+   <div align="center">
+     <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/dea3c122-aa5f-420a-aa0a-8351e3b58b1b" alt="Imagem2" width="400">
+   </div>
+
