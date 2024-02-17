@@ -70,3 +70,12 @@ O projeto está organizado em diversos módulos para facilitar a manutenção e 
 
 - **Melhor Visualização das Imagens**: A interface gráfica pode ser aprimorada para proporcionar uma melhor visualização das imagens. Isso inclui ajustes na escala e disposição das imagens para uma experiência mais intuitiva.
 
+## Contribuidores
+
+Agradecemos a todas as pessoas que contribuíram para este projeto. Este projeto foi concebido e desenvolvido pelos seguintes contribuidores:
+
+- [Alexssander Fernandes Cândido](https://github.com/JuBinLuB)
+- [Gabriel Henrique](https://github.com/gabrielhs33)
+
+
+
