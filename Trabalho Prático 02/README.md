@@ -58,7 +58,7 @@ O projeto está organizado em diversos módulos para facilitar a manutenção e 
    </div>
 
 5. **Exibir Caminho Otimizado**:  
-   Após o carregamento das imagens, clique no botão "Exibir Caminho" para calcular e apresentar o caminho otimizado para o deslocamento de equipamentos em ambientes 3D.
+   Após o carregamento das imagens, clique no botão "Exibir Caminho" para calcular e apresentar o caminho otimizado para o deslocamento de equipamentos em ambientes 2D e 3D.
 
    <p align="center">
       <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/681244c3-280a-44a5-9f6e-28d37a52c294" alt="Imagem1" width="200">
