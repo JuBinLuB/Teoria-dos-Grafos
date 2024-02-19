@@ -26,7 +26,7 @@ O propósito principal da aplicação é encontrar um caminho apropriado a parti
 
 ## Contribuidores
 
-Agradecemos a todas as pessoas que contribuíram para este projeto. Abaixo estão os contribuidores notáveis:
+Este projeto foi concebido e desenvolvido pelos seguintes contribuidores:
 
 - [Alexssander Fernandes Cândido](https://github.com/JuBinLuB)
 - [Gabriel Henrique](https://github.com/gabrielhs33)
