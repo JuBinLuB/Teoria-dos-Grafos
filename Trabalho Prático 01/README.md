@@ -45,13 +45,14 @@ O propósito principal da aplicação é encontrar um caminho apropriado a parti
      <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/73b9b1ed-7619-4447-a87d-6ccdc82f1f2b" alt="Imagem1" width="400">
    </div>
 
-5. **Exibir Caminho Otimizado**:  
+4. **Exibir Caminho Otimizado**:  
    Após o carregamento das imagens, clique no botão "Exibir Caminho" para calcular e apresentar o caminho otimizado para o deslocamento de equipamentos em ambientes 2D e 3D.
 
    <p align="center">
-      <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/c24b8a40-cd00-4288-9121-d918f740c66f" alt="Imagem1" width="200">
-      <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/2706cd18-0a66-4e26-b264-beb3c1c8ffef" alt="Imagem2" width="200">
+      <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/0881ab9c-2c6b-44b0-a2e7-1ba11cc6d8c6" alt="Imagem1" width="200">
+      <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/42b5aa28-1f15-4a9f-b909-66afb19f1a6d" alt="Imagem2" width="200">
    </p>
+
 ## Contribuidores
 
 Este projeto foi concebido e desenvolvido pelos seguintes contribuidores:
