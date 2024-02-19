@@ -5,6 +5,13 @@
 ## Descrição do Projeto
 
 Este projeto, desenvolvido como parte do Trabalho Prático II da disciplina de Teoria dos Grafos (CSI466), tem como objetivo estender o Trabalho Prático I, aproximando-o do problema real de deslocamento de equipamentos em ambientes 3D. Este projeto consiste em uma aplicação de busca de caminhos em ambientes 3D, utilizando algoritmos de grafos. A principal finalidade é otimizar o deslocamento de equipamentos em projetos BIM (Building Information Modeling), levando em consideração múltiplas áreas de laydown, evitando obstáculos e possibilitando deslocamentos verticais entre diferentes andares.
+## Objetivos do Projeto
+
+1. **Leitura e Manipulação de Dados**: Desenvolver habilidades na leitura e manipulação de dados provenientes de imagens bitmap que representam projetos BIM.
+
+2. **Reforço em Estruturas de Dados em Grafos**: Aplicar e reforçar conhecimentos em estruturas de dados relacionadas a grafos para modelar eficientemente as relações entre diferentes pontos no ambiente 3D.
+
+3. **Aplicação Prática dos Conhecimentos**: Utilizar algoritmos de grafos para resolver problemas práticos relacionados ao deslocamento de equipamentos.
 ## Requisitos Adicionais do Trabalho
 
 Além dos requisitos estabelecidos no Trabalho Prático I, o Trabalho Prático II incorpora as seguintes considerações:
@@ -16,13 +23,6 @@ Além dos requisitos estabelecidos no Trabalho Prático I, o Trabalho Prático I
 - **Deslocamento 3D**: O algoritmo deve contemplar o deslocamento vertical, permitindo que o objeto se mova não apenas nas direções tradicionais, mas também para cima e para baixo entre diferentes andares.
 
 - **Geometria do Objeto (Extra)**: O objeto a ser deslocado pode ocupar mais de um pixel na imagem, representando sua geometria real. Considerações especiais devem ser feitas para garantir que todo o corpo do objeto possa passar sem conflitos durante o deslocamento.
-## Objetivos do Projeto
-
-1. **Leitura e Manipulação de Dados**: Desenvolver habilidades na leitura e manipulação de dados provenientes de imagens bitmap que representam projetos BIM.
-
-2. **Reforço em Estruturas de Dados em Grafos**: Aplicar e reforçar conhecimentos em estruturas de dados relacionadas a grafos para modelar eficientemente as relações entre diferentes pontos no ambiente 3D.
-
-3. **Aplicação Prática dos Conhecimentos**: Utilizar algoritmos de grafos para resolver problemas práticos relacionados ao deslocamento de equipamentos.
 ## Estrutura do Projeto
 
 O projeto está organizado em diversos módulos para facilitar a manutenção e a compreensão do código. A estrutura do projeto é a seguinte:
