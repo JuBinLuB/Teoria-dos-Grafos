@@ -7,6 +7,13 @@ Este projeto implementa uma solução para identificar a viabilidade de deslocam
 
 O propósito principal da aplicação é encontrar um caminho apropriado a partir de um pixel vermelho, indicando a posição atual do equipamento, até uma área verde que representa a zona de manutenção desejada. A aplicação permite aos usuários fazer o upload de uma imagem bitmap, visualizá-la na interface e, em seguida, utilizar o algoritmo de Busca em Largura (BFS) para caminhos para identificar e exibir a sequência de passos necessários para o deslocamento.
 
+## Objetivos do Projeto
+
+1. **Leitura e Manipulação de Dados**: Desenvolver habilidades na leitura e manipulação de dados provenientes de imagens bitmap que representam projetos BIM.
+
+2. **Reforço em Estruturas de Dados em Grafos**: Aplicar e reforçar conhecimentos em estruturas de dados relacionadas a grafos para modelar eficientemente as relações entre diferentes pontos no ambiente 3D.
+
+3. **Aplicação Prática dos Conhecimentos**: Utilizar algoritmos de grafos para resolver problemas práticos relacionados ao deslocamento de equipamentos.
 ## Estrutura do Código
 
 - `main.py`: Contém o código principal para interação com o usuário.
@@ -33,18 +40,6 @@ O propósito principal da aplicação é encontrar um caminho apropriado a parti
 
 3. **Carregar Imagens**:  
    No programa aberto, clique no botão "Carregar Imagens" para selecionar os arquivos bitmap (.bmp) que representam os diferentes andares do projeto. Os arquivos bitmap estão localizados na pasta `Datasets`.
-
-  <div align="center">
-    <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/67aa2635-421b-4afa-b226-bf030a3fc468" alt="Imagem1" width="400">
-  </div>
-
-4. **Exibir Caminho Otimizado**:  
-   Após o carregamento das imagens, clique no botão "Exibir Caminho" para calcular e apresentar o caminho otimizado para o deslocamento de equipamentos em ambientes 2D.
-
-   <p align="center">
-     <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/8016cf27-e4c0-4dfa-b5c5-391d37ee7bef" alt="Imagem1" width="200">
-     <img src="https://github.com/JuBinLuB/Teoria-dos-Grafos/assets/110267649/48c39324-f6a3-49f7-ba80-422076960653" alt="Imagem1" width="200">
-   </p>
 
 ## Contribuidores
 
