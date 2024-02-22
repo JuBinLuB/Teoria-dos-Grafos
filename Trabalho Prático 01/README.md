@@ -25,7 +25,6 @@ O propósito principal da aplicação é encontrar um caminho apropriado a parti
 - Python 3
 - Tkinter
 - Pillow (PIL)
-- Numpy
 ## Execução do Projeto
 
 1. **Instalação de Dependências**:  
