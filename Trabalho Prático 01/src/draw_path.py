@@ -1,6 +1,7 @@
+from typing import Any, List, Tuple
 from PIL import Image
 
-def draw_path(path: list, image_name: str) -> None:
+def draw_path(path: List[int, int], image_path: str) -> None:
   """
   Draw the specified path on the image and save the resulting image.
 
@@ -11,7 +12,7 @@ def draw_path(path: list, image_name: str) -> None:
   Returns:
   - None
   """
-  image = Image.open(image_name).convert("RGB")
+  image = Image.open(image_path).convert("RGB")
   pixels = image.load()
   
   for x, y in path:

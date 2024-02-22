@@ -68,7 +68,61 @@ class Graph:
       str += f"{u} -> {self.adj[u]}\n"
     return str
   
-  def get_neighbors(self, coordinates: tuple, width: int, height: int, image: Image.Image) -> list[tuple[int, int]]:
+  def build_graph(self, image_name: str) -> Tuple[int, int]:
+    """
+    Build a graph from a bitmap image.
+
+    Parameters:
+    - image_name (str): The file path of the bitmap image.
+
+    Returns:
+    - A tuple containing source and destination pixels representing the edges of the graph.
+    """
+    # Load the image using the load_image function.
+    image = load_image(image_name)
+    width, height = image.size
+
+    source_pixel = None
+    destination_pixel = None
+
+    # Iterate over all pixels in the image.
+    for x in range(width):
+      for y in range(height):
+        current_pixel = (x, y)
+        pixel_color = image.getpixel(current_pixel)
+        
+        # Check if the pixel is not black.
+        if pixel_color != (0, 0, 0):
+          if pixel_color == (255, 0, 0):
+            source_pixel = current_pixel
+          
+          if pixel_color == (0, 255, 0):
+            destination_pixel = current_pixel
+          
+          # Add edges for the non-black pixel.
+          self.add_edges_for_pixel(current_pixel, width, height, image)
+    return (source_pixel, destination_pixel)
+  
+  def add_edges_for_pixel(self, coordinates: Tuple[int, int], width: int, height: int, image: Image.Image) -> None:
+    """
+    Add edges for a non-black pixel in the graph.
+
+    Parameters:
+    - coordinates (tuple): The (x, y) coordinates of the current pixel.
+    - width (int): The width of the image.
+    - height (int): The height of the image.
+
+    Returns:
+    - None
+    """
+    # Get neighbors of the current pixel.
+    current_neighbors = self.get_neighbors(coordinates, width, height, image)
+
+    # Add edges between the current pixel and its neighbors.
+    for neighbor_coordinates in current_neighbors:
+        self.add_undirected_edge(coordinates, neighbor_coordinates, 1)
+
+  def get_neighbors(self, coordinates: Tuple[int, int], width: int, height: int, image: Image.Image) -> list[Tuple[int, int]]:
     """
     Get non-black neighbors of a pixel in a bitmap image.
 
@@ -95,63 +149,7 @@ class Graph:
             neighbors.append((coordinate_x, coordinate_y))
     return neighbors
   
-  def build_graph(self, image_name: str) -> Tuple[int, int]:
-    """
-    Build a graph from a bitmap image.
-
-    Parameters:
-    - image_name (str): The file path of the bitmap image.
-
-    Returns:
-    - A tuple containing source and destination pixels representing the edges of the graph.
-    """
-    # Load the image using the load_image function.
-    image = load_image(image_name)
-    width, height = image.size
-
-    source_pixel = None
-    destination_pixel = None
-
-    valid_colors = [(255, 255, 255), (255, 0, 0), (0, 255, 0)]
-        
-    # Iterate over all pixels in the image.
-    for x in range(width):
-      for y in range(height):
-        current_pixel = (x, y)
-        pixel_color = image.getpixel(current_pixel)
-        
-        # Check if the pixel is not black.
-        if pixel_color in valid_colors:
-          if pixel_color == (255, 0, 0):
-            source_pixel = current_pixel
-          
-          if pixel_color == (0, 255, 0):
-            destination_pixel = current_pixel
-          
-          # Add edges for the non-black pixel.
-          self.add_edges_for_pixel(current_pixel, width, height, image)
-    return (source_pixel, destination_pixel)
-  
-  def add_edges_for_pixel(self, coordinates: tuple, width: int, height: int, image: Image.Image) -> None:
-    """
-    Add edges for a non-black pixel in the graph.
-
-    Parameters:
-    - coordinates (tuple): The (x, y) coordinates of the current pixel.
-    - width (int): The width of the image.
-    - height (int): The height of the image.
-
-    Returns:
-    - None
-    """
-    # Get neighbors of the current pixel.
-    current_neighbors = self.get_neighbors(coordinates, width, height, image)
-
-    # Add edges between the current pixel and its neighbors.
-    for neighbor_coordinates in current_neighbors:
-        self.add_undirected_edge(coordinates, neighbor_coordinates, 1)
-
-  def path_bfs(self, source_pixel: any, destination_pixel: any) -> List[Any]:
+  def path_bfs(self, source_pixel: any, destination_pixel: any) -> List[Tuple[int, int]]:
     """
     Perform Breadth-First Search (BFS) starting from the specified source node.
 

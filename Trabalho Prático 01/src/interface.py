@@ -1,6 +1,6 @@
 import tkinter as tk
-from tkinter import filedialog
-from tkinter import messagebox
+
+from tkinter import filedialog, messagebox
 from PIL import Image, ImageTk
 from draw_path import draw_path
 from graph import Graph

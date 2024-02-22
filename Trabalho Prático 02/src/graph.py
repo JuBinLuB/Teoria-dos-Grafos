@@ -137,7 +137,7 @@ class Graph:
 
     # Add edges between the current pixel and its neighbors.
     for neighbor_x, neighbor_y, neighbor_z in neighbor_coordinates_list:
-        # Get the pixel color of the neighbor.
+        # Get the pixel color of the neighbor and calculate your weight.
         pixel_color = images[neighbor_z].getpixel((neighbor_x, neighbor_y))
         weight = color_weights.get(pixel_color, None)
 
