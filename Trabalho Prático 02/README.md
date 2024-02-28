@@ -48,7 +48,7 @@ O projeto está organizado em diversos módulos para facilitar a manutenção e 
 2. **Execução do Programa**:  
    Execute o programa principal usando o seguinte comando no terminal:
    
-   `python main.py`.
+   `python main.py`
 
 3. **Carregar Imagens**:  
    No programa aberto, clique no botão "Carregar Imagens" para selecionar os arquivos bitmap (.bmp) que representam os diferentes andares do projeto. Os arquivos bitmap estão localizados na pasta `Datasets`.
@@ -72,7 +72,7 @@ O projeto está organizado em diversos módulos para facilitar a manutenção e 
 
 ## Contribuidores
 
-Agradecemos a todas as pessoas que contribuíram para este projeto. Este projeto foi concebido e desenvolvido pelos seguintes contribuidores:
+Este projeto foi concebido e desenvolvido pelos seguintes contribuidores:
 
 - [Alexssander Fernandes Cândido](https://github.com/JuBinLuB)
 - [Gabriel Henrique](https://github.com/gabrielhs33)
