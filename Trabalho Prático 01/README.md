@@ -35,7 +35,7 @@ O propósito principal da aplicação é encontrar um caminho apropriado a parti
 2. **Execução do Programa**:  
    Execute o programa principal usando o seguinte comando no terminal:
    
-   `python main.py`.
+   `python main.py`
 
 3. **Carregar Imagens**:  
    No programa aberto, clique no botão "Carregar Imagens" para selecionar os arquivos bitmap (.bmp) que representam os diferentes andares do projeto. Os arquivos bitmap estão localizados na pasta `Datasets`.
