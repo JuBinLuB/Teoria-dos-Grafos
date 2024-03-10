@@ -104,9 +104,9 @@ class ImageViewer(tk.Frame):
             return
 
         # Calculate the shortest path using the Dijkstra algorithm.
-        path = self.graph.dijkstra(source_pixel, destination_pixels)
+        shortest_path = self.graph.dijkstra(source_pixel, destination_pixels)
 
-        if not path:
+        if not shortest_path:
             messagebox.showerror("Erro", "Não há caminho possível.")
             return
         
@@ -116,7 +116,7 @@ class ImageViewer(tk.Frame):
         ]
         
         # Draw the path on a new image.
-        draw_path(path, self.image_paths, self.output_image_paths)
+        draw_path(shortest_path, self.image_paths, self.output_image_paths)
 
         # Display the composite image with drawn paths.
         self.original_images = [Image.open(image) for image in self.output_image_paths]
@@ -147,5 +147,5 @@ class ImageViewer(tk.Frame):
 
     def reset_graph(self):
         self.graph = Graph()
-        self.max_floors = 0
         self.image_paths = []
+        self.max_floors = 0

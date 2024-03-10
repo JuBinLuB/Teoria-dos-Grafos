@@ -176,10 +176,12 @@ class Graph:
     # Iterate over each direction.
     for neighbor_x, neighbor_y, neighbor_z in directions:
        # Check if the neighbor is within the image boundaries.
-      if 0 <= neighbor_x < width and 0 <= neighbor_y < height and 0 <= neighbor_z < max_floors:
+      is_within_bounds = 0 <= neighbor_x < width and 0 <= neighbor_y < height and 0 <= neighbor_z < max_floors
+
+      if is_within_bounds:
         # Get the pixel color of the corresponding floor.
         pixel_color = images[neighbor_z].getpixel((neighbor_x, neighbor_y))
-
+        
         # Check if the pixel is not black.
         if pixel_color != Color.BLACK:
           neighbors.append((neighbor_x, neighbor_y, neighbor_z))

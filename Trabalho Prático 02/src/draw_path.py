@@ -2,7 +2,7 @@ from typing import Any, List, Tuple
 from PIL import Image, ImageDraw
 from colors import Color
 
-def draw_path(path: List[Tuple[int, int, int]], image_paths: List[str], output_paths: List[str]) -> None:
+def draw_path(path: List[Tuple[int, int, int]], image_paths: List[str], output_image_paths: List[str]) -> None:
   """
   Draw the specified path on the image and save the resulting image for each floor.
 
@@ -30,5 +30,5 @@ def draw_path(path: List[Tuple[int, int, int]], image_paths: List[str], output_p
       draws[z].point((x, y), fill=path_color)
 
     # Save the resulting image with the drawn path.
-    original_images[z].save(output_paths[z])
+    original_images[z].save(output_image_paths[z])
   
