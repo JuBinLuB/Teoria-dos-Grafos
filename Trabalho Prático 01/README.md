@@ -3,7 +3,7 @@
 
 ## Descrição do Projeto
 
-Este projeto implementa uma solução para identificar a viabilidade de deslocamento de um equipamento em um ambiente de projeto BIM (Building Information Modeling). A implementação utiliza uma aplicação de visualização de imagens com a capacidade de analisar uma imagem bitmap 2D. A abordagem adotada baseia-se na teoria dos grafos, onde cada pixel na imagem representa um nó, e arestas são estabelecidas entre pixels vizinhos.
+Este projeto, desenvolvido como parte do Trabalho Prático I da disciplina de Teoria dos Grafos (CSI466), implementa uma solução para identificar a viabilidade de deslocamento de um equipamento em um ambiente de projeto BIM (Building Information Modeling). A implementação utiliza uma aplicação de visualização de imagens com a capacidade de analisar uma imagem bitmap 2D. A abordagem adotada baseia-se na teoria dos grafos, onde cada pixel na imagem representa um nó, e arestas são estabelecidas entre pixels vizinhos.
 
 O propósito principal da aplicação é encontrar um caminho apropriado a partir de um pixel vermelho, indicando a posição atual do equipamento, até uma área verde que representa a zona de manutenção desejada. A aplicação permite aos usuários fazer o upload de uma imagem bitmap, visualizá-la na interface e, em seguida, utilizar o algoritmo de Busca em Largura (BFS) para caminhos para identificar e exibir a sequência de passos necessários para o deslocamento.
 
@@ -23,8 +23,8 @@ O propósito principal da aplicação é encontrar um caminho apropriado a parti
 ## Tecnologias Utilizadas
 
 - Python 3
-- Tkinter
 - Pillow (PIL)
+- Tkinter
 ## Execução do Projeto
 
 1. **Instalação de Dependências**:  
