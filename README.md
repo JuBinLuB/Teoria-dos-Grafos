@@ -10,4 +10,4 @@ O repositório está organizado da seguinte maneira:
   
 - **Lista de Exercícios Programação em Python**: Esta seção inclui uma variedade de exercícios práticos em Python, para consolidar os conhecimentos em programação na linguagem.
   
-- **Trabalho Prático 01 e 02**: Os trabalhos práticos oferecem uma oportunidade mais ampla para aplicar os conhecimentos adquiridos na disciplina. Os enunciados completos dos trabalhos estão disponíveis na pasta `docs`, oferecendo uma visão detalhada dos desafios propostos.
+- **Trabalho Prático 01 e 02**: Os trabalhos práticos oferecem uma oportunidade para aplicar os conhecimentos adquiridos na disciplina. Os enunciados completos dos trabalhos estão disponíveis na pasta `docs`, fornecendo uma visão detalhada dos desafios propostos.
